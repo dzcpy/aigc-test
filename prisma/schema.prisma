@@ -43,12 +43,10 @@ model Tag {
 }
 
 model Dream {
-    id            Int     @id @default(autoincrement())
+    id            Int    @id @default(autoincrement())
     name          String
-    views         Int     @default(0)
-    contributions Int     @default(0)
-    isHot         Boolean @default(false)
-    isNode        Boolean @default(false)
+    views         Int    @default(0)
+    contributions Int    @default(0)
     summary       String
     description   String
 
