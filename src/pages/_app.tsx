@@ -1,11 +1,13 @@
 import { Poppins } from 'next/font/google'
-import { type AppType } from "next/app";
+import { type AppType } from 'next/app'
 
-import { api } from "~/utils/api";
-import "~/styles/globals.css";
+import { api } from '~/utils/api'
 
 const poppins = Poppins({ weight: '400', subsets: ['latin-ext'] })
 
+import '~/styles/globals.css'
+import '~/styles/swiper.css'
+import 'swiper/css'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
@@ -13,6 +15,6 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <Component {...pageProps} />
     </main>
   )
-};
+}
 
-export default api.withTRPC(MyApp);
+export default api.withTRPC(MyApp)

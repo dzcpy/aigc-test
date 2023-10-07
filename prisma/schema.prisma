@@ -42,6 +42,17 @@ model Tag {
     DreamTag DreamTag[]
 }
 
+model Image {
+    id  Int    @id @default(autoincrement())
+    url String
+
+    dream   Dream @relation(fields: [dreamId], references: [id])
+    dreamId Int
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
 model Dream {
     id            Int    @id @default(autoincrement())
     name          String
@@ -51,15 +62,19 @@ model Dream {
     description   String
 
     authorId Int
-    author   User   @relation(fields: [authorId], references: [id])
-    users    User[] @relation("UserDream")
+    author   User @relation(fields: [authorId], references: [id])
+
+    contributors User[] @relation("UserDream")
 
     genres     Genre[]      @relation("GenreDream")
     GenreDream GenreDream[]
 
+    tags Tag[] @relation("DreamTag")
+
+    images Image[]
+
     createdAt DateTime    @default(now())
     updatedAt DateTime    @updatedAt
-    tags      Tag[]       @relation("DreamTag")
     DreamTag  DreamTag[]
     UserDream UserDream[]
 }
