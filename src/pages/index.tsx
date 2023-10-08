@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Home from '~/components/home/home'
+import Home from '~/components/home'
 
 export default function IndexPage() {
   return (
