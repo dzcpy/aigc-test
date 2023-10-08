@@ -29,7 +29,7 @@ export default function Header() {
           className="mt-[23px] w-full"
           spaceBetween={15}
           slidesPerView={1}
-          autoplay={{ delay: 5000 }}
+          // autoplay={{ delay: 5000 }}
           pagination={true}
         >
           {[0, 1, 2, 3, 4].map((index) => (
@@ -37,8 +37,8 @@ export default function Header() {
               <Ribbon size="large" text={'TOP' + (index + 1)} />
               <div className="border-[#FFE0F9] border-[6px] rounded-[14px] box-border bg-[url(/images/slide.png)] overflow-hidden w-full bg-no-repeat bg-cover">
                 <div className="bg-[url(/images/slide-shadow.png)] bg-[center_right] bg-no-repeat bg-cover w-full">
-                  <div className="w-[385px] h-[265px] relative rounded-[20px]">
-                    <div className="absolute top-4 right-10 w-[130px]">
+                  <div className="w-full h-[265px] relative rounded-[20px]">
+                    <div className="absolute top-4 right-0 w-[130px]">
                       <div className="text-black text-2xl w-full font-bold leading-9">Arachna</div>
                       <div className="w-full text-slate-900 text-xs font-normal leading-[18px]">
                         A group of spider women on the outskirts of the city. These fierce and elegant creatures possess
