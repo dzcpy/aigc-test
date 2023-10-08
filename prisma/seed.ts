@@ -58,6 +58,12 @@ async function main() {
           contributors: {
             connect: [1, 2, 3, 4, 5].map((id) => ({ id })),
           },
+          tags: {
+            connect: [1, 2, 3, 4, 5].map((id) => ({ id })),
+          },
+          genres: {
+            connect: [1, 2, 3, 4, 5].map((id) => ({ id })),
+          },
           authorId: 1,
         },
       })
@@ -76,6 +82,12 @@ async function main() {
           contributors: {
             connect: [1, 2, 3, 4, 5].map((id) => ({ id })),
           },
+          tags: {
+            connect: [1, 2, 3, 4, 5].map((id) => ({ id })),
+          },
+          genres: {
+            connect: [1, 2, 3, 4, 5].map((id) => ({ id })),
+          },
           authorId: 1,
         },
       })
@@ -92,6 +104,12 @@ async function main() {
           views: Math.floor(Math.random() * 1500),
           contributions: Math.floor(Math.random() * 1000),
           contributors: {
+            connect: [1, 2, 3, 4, 5].map((id) => ({ id })),
+          },
+          tags: {
+            connect: [1, 2, 3, 4, 5].map((id) => ({ id })),
+          },
+          genres: {
             connect: [1, 2, 3, 4, 5].map((id) => ({ id })),
           },
           authorId: 1,
