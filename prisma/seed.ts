@@ -125,7 +125,7 @@ async function main() {
         update: {},
         create: {
           id: id,
-          url: `/images/dream${(id % 4) + 1}.jpg`,
+          url: `/images/dream${(id % 4) + 1}.png`,
           dreamId: id,
         },
       })
