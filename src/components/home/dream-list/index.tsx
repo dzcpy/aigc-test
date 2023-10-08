@@ -13,7 +13,7 @@ export default function DreamList() {
   }).data
 
   return (
-    <div className="w-full h-full max-w-[430px] mx-auto mt-3 pb-[80px]">
+    <div className="w-full h-full max-w-[760px] mx-auto mt-3 pb-[80px]">
       <div className="mx-3 relative">
         <Genres selected={selectedGenre} setSelectedGenre={setSelectedGenre} />
         <Filters selected={selectedFilter} setSelectedFilter={setSelectedFilter} />

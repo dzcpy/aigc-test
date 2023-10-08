@@ -5,7 +5,7 @@ import Ribbon from '../common/ribbon'
 
 export default function Header() {
   return (
-    <div className="w-full h-full max-w-[430px] mx-auto">
+    <div className="w-full h-full max-w-[760px] mx-auto">
       <div className="mx-[9px]">
         <div className="mr-[5px] mt-[3px] flex justify-end">
           <img src="/images/button-home.png" />
