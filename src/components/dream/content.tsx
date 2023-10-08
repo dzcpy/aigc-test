@@ -8,7 +8,7 @@ export type ContentProps = {
 export function Content({ dream }: ContentProps) {
   console.log(dream)
   return (
-    <div className="my-6 mx-3 w-full relative">
+    <div className="my-6 px-3 w-full relative">
       <div className="flex justify-between gap-4">
         <h1 className="text-black text-xl font-bold leading-[30px]">{dream?.name}</h1>
         <div className="flex items-center gap-2">
@@ -70,7 +70,7 @@ export function Content({ dream }: ContentProps) {
           </span>
         </div>
         <div className="flex items-center justify-center">
-          <span className="text-blue-900 text-sm font-normal leading-[21px]">View Dream Details</span>
+          <span className="text-blue-900 text-sm font-normal leading-[21px] cursor-pointer">View Dream Details</span>
           <img src="/images/right-arrow-filled.svg" className="w-6 h-6 -mx-1" />
         </div>
       </div>
