@@ -33,12 +33,15 @@ export default function Header() {
           pagination={true}
         >
           {[0, 1, 2, 3, 4].map((index) => (
-            <SwiperSlide className="w-full overflow-hidden relative w-full" key={index}>
+            <SwiperSlide className="w-full overflow-hidden relative" key={index}>
               <Ribbon size="large" text={'TOP' + (index + 1)} />
-              <div className="border-[#FFE0F9] border-[6px] rounded-[14px] box-border bg-[url(/images/slide.png)] overflow-hidden w-full bg-no-repeat bg-cover">
-                <div className="bg-[url(/images/slide-shadow.png)] bg-[center_right] bg-no-repeat bg-cover w-full">
-                  <div className="w-full h-[265px] relative rounded-[20px]">
-                    <div className="absolute top-4 right-0 w-[130px]">
+              <div className="border-[#FFE0F9] border-[6px] rounded-[14px] box-border bg-[url(/images/slide.png)] overflow-hidden bg-no-repeat bg-cover w-full">
+                <div
+                  className="bg-[url(/images/slide-shadow.png)] bg-[center_right] bg-no-repeat bg-cover w-full"
+                  style={{ backgroundSize: 'auto 100%' }}
+                >
+                  <div className="w-full aspect-[397/266] relative rounded-[20px] flex justify-end items-center">
+                    <div className="w-[130px] min-w-[33%] mr-1">
                       <div className="text-black text-2xl w-full font-bold leading-9">Arachna</div>
                       <div className="w-full text-slate-900 text-xs font-normal leading-[18px]">
                         A group of spider women on the outskirts of the city. These fierce and elegant creatures possess
