@@ -6,7 +6,6 @@ export type FiltersProps = {
 }
 
 export default function Filters({ selected, setSelectedFilter }: FiltersProps) {
-  console.log(selected)
   return (
     <>
       <div className="mx-5 flex items-center justify-center text-sm font-normal leading-[21px] text-blue-900 select-none gap-[10px] mt-[9px]">

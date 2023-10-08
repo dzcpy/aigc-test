@@ -11,43 +11,43 @@ datasource db {
 }
 
 model Genre {
-    id        Int      @id @default(autoincrement())
-    name      String
+    id   Int    @id @default(autoincrement())
+    name String
+
+    dreams Dream[]
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    dreams     Dream[]      @relation("GenreDream")
-    GenreDream GenreDream[]
 }
 
 model User {
-    id        Int      @id @default(autoincrement())
-    name      String
-    avatar    String
+    id     Int    @id @default(autoincrement())
+    name   String
+    avatar String
+
+    authoredDreams    Dream[]
+    contributedDreams Dream[] @relation("Contributors")
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    dreams    Dream[]     @relation("UserDream")
-    Dream     Dream[]
-    UserDream UserDream[]
 }
 
 model Tag {
-    id        Int      @id @default(autoincrement())
-    name      String
+    id   Int    @id @default(autoincrement())
+    name String
+
+    dreams Dream[]
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    dreams   Dream[]    @relation("DreamTag")
-    DreamTag DreamTag[]
 }
 
 model Image {
     id  Int    @id @default(autoincrement())
     url String
 
-    dream   Dream @relation(fields: [dreamId], references: [id])
     dreamId Int
+    dream   Dream @relation(fields: [dreamId], references: [id])
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
@@ -61,56 +61,13 @@ model Dream {
     summary       String
     description   String
 
-    authorId Int
-    author   User @relation(fields: [authorId], references: [id])
+    genres       Genre[]
+    tags         Tag[]
+    images       Image[]
+    author       User    @relation(fields: [authorId], references: [id])
+    authorId     Int
+    contributors User[]  @relation("Contributors")
 
-    contributors User[] @relation("UserDream")
-
-    genres     Genre[]      @relation("GenreDream")
-    GenreDream GenreDream[]
-
-    tags Tag[] @relation("DreamTag")
-
-    images Image[]
-
-    createdAt DateTime    @default(now())
-    updatedAt DateTime    @updatedAt
-    DreamTag  DreamTag[]
-    UserDream UserDream[]
-}
-
-model DreamTag {
-    dreamId Int
-    tagId   Int
-
-    dream Dream @relation(fields: [dreamId], references: [id])
-    tag   Tag   @relation(fields: [tagId], references: [id])
-
-    @@id([dreamId, tagId])
-    @@index([dreamId])
-    @@index([tagId])
-}
-
-model UserDream {
-    userId  Int
-    dreamId Int
-
-    user  User  @relation(fields: [userId], references: [id])
-    dream Dream @relation(fields: [dreamId], references: [id])
-
-    @@id([userId, dreamId])
-    @@index([userId])
-    @@index([dreamId])
-}
-
-model GenreDream {
-    genreId Int
-    dreamId Int
-
-    genre Genre @relation(fields: [genreId], references: [id])
-    dream Dream @relation(fields: [dreamId], references: [id])
-
-    @@id([genreId, dreamId])
-    @@index([genreId])
-    @@index([dreamId])
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }

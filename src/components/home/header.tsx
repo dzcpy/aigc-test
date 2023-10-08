@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
+import { Pagination, Autoplay } from 'swiper/modules'
 
 import Ribbon from '../common/ribbon'
 
@@ -12,7 +12,7 @@ export default function Header() {
         </div>
         <div className="mt-[22px] w-full px-[5px]">
           <div
-            className="h-9 w-full border border-transparent bg-[linear-gradient(white,white),linear-gradient(to_right,#15097A,#FF016A)] bg-origin-border border-[double] rounded-full"
+            className="h-9 w-full border border-transparent bg-[linear-gradient(white,white),linear-gradient(to_right,#15097A,#FF016A)] bg-origin-border rounded-full"
             style={{ backgroundClip: 'content-box, border-box' }}
           >
             <div className="flex justify-start items-center gap-2 w-full h-full px-3">
@@ -25,14 +25,12 @@ export default function Header() {
           </div>
         </div>
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           className="mt-[23px] w-full"
           spaceBetween={15}
           slidesPerView={1}
-          autoplay={{ delay: 3000 }}
+          autoplay={{ delay: 5000 }}
           pagination={true}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           {[0, 1, 2, 3, 4].map((index) => (
             <SwiperSlide className="w-full overflow-hidden relative w-full" key={index}>

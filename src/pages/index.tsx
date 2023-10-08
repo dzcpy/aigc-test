@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Home from '~/components/home/home'
 
-export default function Index() {
+export default function IndexPage() {
   return (
     <>
       <Head>

@@ -1,4 +1,4 @@
-import Dreams from './dreams'
+import DreamList from './dream-list'
 import Footer from './footer'
 import Header from './header'
 
@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Dreams />
+      <DreamList />
       <Footer />
     </>
   )

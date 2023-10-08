@@ -4,10 +4,9 @@ import { useState } from 'react'
 import Filters from './filters'
 import DreamsList from './list'
 
-export default function Dreams() {
+export default function DreamList() {
   const [selectedGenre, setSelectedGenre] = useState<number | undefined>(undefined)
   const [selectedFilter, setSelectedFilter] = useState<'recent' | 'hot' | 'nodes' | undefined>(undefined)
-  const genres = api.dream.getGenres.useQuery(undefined).data
   const dreams = api.dream.getDreams.useQuery({
     ...(selectedGenre ? { genreId: selectedGenre } : {}),
     filter: selectedFilter,

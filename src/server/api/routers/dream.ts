@@ -49,6 +49,7 @@ export const dreamRouter = createTRPCRouter({
         contributors: true,
         genres: true,
         tags: true,
+        images: true,
       },
     })
     return dream

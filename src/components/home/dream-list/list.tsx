@@ -1,5 +1,5 @@
 import type { inferRouterOutputs } from '@trpc/server'
-import numeral from 'numeral'
+import { useRouter } from 'next/router'
 import Ribbon from '~/components/common/ribbon'
 import type { AppRouter } from '~/server/api/root'
 import { formatNumber } from '~/utils/numeral'
@@ -9,10 +9,16 @@ export type DreamListProps = {
 }
 
 export default function DreamList({ dreams }: DreamListProps) {
+  const router = useRouter()
+
   return (
     <div className="mt-3 grid grid-cols-2 gap-4">
       {dreams?.map((dream) => (
-        <div key={dream.id} className="relative rounded-lg shadow-xl cursor-pointer overflow-hidden">
+        <div
+          key={dream.id}
+          className="relative rounded-lg shadow-xl cursor-pointer overflow-hidden"
+          onClick={() => void router.push('/dreams/' + dream.id)}
+        >
           <Ribbon size="small" text="New" />
           <div className="w-full h-auto aspect-[37/25] relative">
             <img src={dream.images[0]?.url} className="w-full h-full1" />

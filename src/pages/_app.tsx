@@ -6,8 +6,9 @@ import { api } from '~/utils/api'
 const poppins = Poppins({ weight: '400', subsets: ['latin-ext'] })
 
 import '~/styles/globals.css'
-import '~/styles/swiper.css'
 import 'swiper/css'
+import '~/styles/swiper.css'
+// import 'swiper/css/navigation'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (

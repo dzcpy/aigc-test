@@ -18,3 +18,31 @@
   width: 9px;
   background-color: #c84b6a;
 }
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 22px;
+  margin-top: 0;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: 18px;
+  left: auto;
+  background: url(/images/arrow-right.svg) no-repeat center center;
+}
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: 18px;
+  right: auto;
+  background: url(/images/arrow-left.svg) no-repeat center center;
+}
+.swiper-button-disabled {
+  display: none;
+}
